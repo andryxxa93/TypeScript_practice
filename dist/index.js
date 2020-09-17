@@ -7,7 +7,10 @@ let todos = [
     new todoItem_1.TodoItem(3, "Collect Tickets"), new todoItem_1.TodoItem(4, "Call Joe", true)
 ];
 let collection = new todoCollections_1.TodoCollection('Andrew', todos);
-console.log(`${collection.userName}s Todo List`);
+console.log(`${collection.userName}s Todo List` +
+    `(${collection.getItemCounts().incomplete} item to do)`);
+collection.deleteCompleteItem();
+collection.getTodoItems(true).forEach(item => item.printDetails());
 let newId = collection.addTodo("Go for run");
 let todoItem = collection.getTodoById(newId);
 todoItem.printDetails();
