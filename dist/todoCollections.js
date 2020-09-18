@@ -23,7 +23,6 @@ class TodoCollection {
     }
     getTodoItems(includeComplete) {
         // console.log(this.itemMap);
-        console.log([...this.itemMap.values()]);
         return [...this.itemMap.values()]
             .filter(item => includeComplete || !item.complete);
     }
